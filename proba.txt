@@ -1,0 +1,29 @@
+
+1.a termékek az adatbázisból legyen kinyerve (név, ár, leírás) + képek keresése és hozzáadása ---> ehhez példa (ezzel próbáltam ki hogy működik-e)
+
+useEffect(() => {
+    const fakeData = [
+        {
+            id: 1,
+            nev: "Szalámis Pizza",
+            ar: 2500,
+            leiras: "Finom szalámis pizza friss hozzávalókkal.",
+            kep: "/kepek/szalamis_pizza.jpg"
+        },
+        {
+            id: 2,
+            nev: "Hawaii Pizza",
+            ar: 2700,
+            leiras: "Sonkával és ananásszal készült pizza.",
+            kep: "/kepek/hawaii_pizza.jpg"
+        }
+    ];
+    setTermekek(fakeData);
+}, []);
+
+
+
+
+
+
+
