@@ -17,7 +17,7 @@ function Rendeles() {
 
     const handleInputChange=(e)=>{
         const{name,value}=e.target;
-        setVasarlo((prevState)=>({ ...prevState, ...{[name]:value}}));
+        setVasarlo((prevState)=>({ ...prevState, [name]:value}));
     }
 
 
