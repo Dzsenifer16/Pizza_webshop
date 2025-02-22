@@ -17,7 +17,7 @@ function Rendeles() {
 
     const handleInputChange=(e)=>{
         const{name,value}=e.target;
-        setUzenet((prevState)=>({[name]:value, [value]:value}));
+        setVasarlo((prevState)=>({ ...prevState, ...{[name]:value}}));
     }
 
 
@@ -101,8 +101,8 @@ function Rendeles() {
                 <p><strong>{calculateTotal()} HUF</strong></p>
                 {/*Vevő adatai form ide kerül*/}
                 <h3>Vásárló adatai</h3>
-                <input type='text' name='nev' placeholder='Név' value={vasarlo.nev } onchange={handleInputChange} style={{width: '100%', padding: '8px', marginBottom: '10px'}}/>
-                <input type='email' name='email' placeholder='Email' value={vasarlo.email} onchange={handleInputChange} style={{width: '100%', padding: '8px', marginBottom: '10px'}}/>
+                <input type='text' name='nev' placeholder='Név' value={vasarlo.nev } onChange={handleInputChange} style={{width: '100%', padding: '8px', marginBottom: '10px'}}/>
+                <input type='email' name='email' placeholder='Email' value={vasarlo.email} onChange={handleInputChange} style={{width: '100%', padding: '8px', marginBottom: '10px'}}/>
                 <input type='text' name='cim' placeholder='Cim' value={vasarlo.cim} onChange={handleInputChange} style={{width: '100%', padding: '8px', marginBottom: '10px'}}/>
                 <button onClick={handleRendelesLead} className='w3-button w3-green'>Rendelés leadása</button>
                 {uzenet && <p style={{color: 'red', marginTop: '10 px'}}>{uzenet}</p>}
