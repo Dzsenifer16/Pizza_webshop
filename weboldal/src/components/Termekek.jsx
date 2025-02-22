@@ -2,16 +2,16 @@ import React, { useState,useEffect, useContext } from 'react';
 import '../App.css';
 import Kosartartalma from './Kosartartalma';
 import kep from './kep.jpg';
-import gettermekek from '../javascript/ajax'
+import { GetTermekek } from '../api/api'
 
 function Gallery() {
     // Ajax (backend és frontend összekötve)
     useEffect(() => {
         async function fetchTermekek() {
-            const data=await gettermekek();
+            const data=await GetTermekek();
             setTermekek(data); //termek beállitasa
-           }
-           fetchTermekek();
+        }
+        fetchTermekek();
     }, []);
 
     const[termekek,setTermekek]=useState([]); //Lista
@@ -61,7 +61,7 @@ function Gallery() {
                 </div>
             </div>
         <div className='w3-row-padding'>
-            {termekek.map((termek)=>
+            {termekek?.map((termek)=>
             <div key={termek.id} className='w3-half w3-margin-bottom'>
                 <h2>{termek.nev}</h2>
                 <p>{termek.leiras}</p>
