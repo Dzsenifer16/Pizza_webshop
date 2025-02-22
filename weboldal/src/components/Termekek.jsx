@@ -61,7 +61,7 @@ function Gallery() {
                 </div>
             </div>
         <div className='w3-row-padding'>
-            {termekek.map((termek)=>
+            {termekek?.map((termek)=>
             <div key={termek.id} className='w3-half w3-margin-bottom'>
                 <h2>{termek.nev}</h2>
                 <p>{termek.leiras}</p>
